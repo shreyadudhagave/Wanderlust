@@ -20,7 +20,7 @@ const listingRouter = require("./routes/listing.js");
 const reviewRouter = require("./routes/review.js");
 const userRouter = require("./routes/user.js");
 
-const dbUrl = process.env.ATLASDB_URL;
+const dbUrl = process.env.ATLASDB_URL;   
 main()
      .then(()=>{
         console.log("conneted to DB");
@@ -61,8 +61,8 @@ const sessionOptions = {
         httpOnly : true,
     },
 };
-
-app.get("/", (req,res)=>{
+ 
+app.get("/", (req,res)=>{        //starting server
     res.redirect("/listings");
 });
 
@@ -110,7 +110,7 @@ app.use("/", userRouter);
 //     res.send("successful testing");
 // });
 
-// app.all("*",(req, res, next)=>{
+// app.all("*",(req, res, next)=>{  
 //   next(new ExpressError(404, "Page Not Found"));
 // });
 
